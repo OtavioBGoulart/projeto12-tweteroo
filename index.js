@@ -33,16 +33,29 @@ const tweets = [
 ]
 
 app.post("/sing-up", (req, res) => {
-    //console.log(req.body);
     const newUser = req.body;
 
     users.push(newUser);
-    console.log(users);
+    //console.log(users);
     res.send("ok");
 })
 
 app.get("/tweets", (req, res) => {
     res.send("Tweets atualizados");
 })
+
+app.post("/tweets", (req, res) => {
+
+    const newtweet = req.body;
+
+    tweets.push(newtweet);
+    console.log(tweets);
+    res.send("ok");
+})
+
+app.get("/tweets", (req, res) => {
+    res.send("Tweets atualizados");
+})
+
 
 app.listen(5000, () => console.log("Server running in port 5000"));
