@@ -36,7 +36,6 @@ app.post("/sign-up", (req, res) => {
     const newUser = req.body;
 
     users.push(newUser);
-    //console.log(users);
     res.send("ok");
 })
 
@@ -46,7 +45,6 @@ app.get("/tweets", (req, res) => {
     for (let i = tweets.length - 1; i >= tweets.length - 10; i--) {
 
     const indexAvatar = users.findIndex( u => u.username === tweets[i].username);
-    console.log(tweets[i].username);
 
      const addtweets = {
             username: tweets[i].username,
@@ -57,7 +55,6 @@ app.get("/tweets", (req, res) => {
         lastTweets.push(addtweets);
     }
 
-    //console.log(lastTweets)
 
     res.send(lastTweets);
 })
@@ -67,7 +64,6 @@ app.post("/tweets", (req, res) => {
     const newtweet = req.body;
 
     tweets.push(newtweet);
-    console.log(newtweet);
     res.send("ok");
 })
 
